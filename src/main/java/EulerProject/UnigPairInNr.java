@@ -24,57 +24,65 @@ public class UnigPairInNr {
 //}
 //        Long x=Long.parseLong(str1.replace(",|\\[|\\]",""));
 
-        String elements = "123456789";
-        int pas=2;
-        for(int j =0; j <2;j++) {
-            for (int i = j; i < elements.length() - 1; i += pas) {
-                String element1 = elements.substring(i, i + 2);
-                Long x=Long.parseLong(element1);
-
-                System.out.println("a= " + x);
-            }
-        }
-
-
-
-        int n = 123456789;
+//        int n = 123456789;
         int count = 9;
-        int nrDigitOfNum = count;
+//        int nrDigitOfNum = count;
         int nrDigitOfPair = 2;
         int digiComparator = (int) Math.pow(10, nrDigitOfPair - 1);
         int pair;
-        int maxProdus=0;
-        int produs = 1;
+        long maxProdus=0;
+        long produs = 1;
 
+        String elements = "123456789";
+        int pairLong=3;
+        for(int j =0; j <pairLong;j++) {
+            for (int i = j; i < elements.length() - 1; i += pairLong) {
+                String element1 = elements.substring(i, i + pairLong);
+                long pairX=Long.parseLong(element1);
+                System.out.println("a= " + pairX);
 
-
-        for (int i = 0; i < count - nrDigitOfPair; i++) {
-
-            int init = n;
-            init=(int) (n / Math.pow(10, i));
-//            System.out.println(init);
-
-            while (!(init < digiComparator)) {
-                pair = (int) (init % Math.pow(10, nrDigitOfPair));
-                init = (int) (init / Math.pow(10, nrDigitOfPair));
-                System.out.println(pair);
                 produs = 1;
-                while (!(pair ==0)) {
-                    produs = produs * (pair % 10);
-                    pair = pair / 10;
+                while (!(pairX ==0)) {
+                    produs = produs * (pairX % 10);
+                    pairX = pairX / 10;
 //                  System.out.println("produs= "+ produs);
 //                    System.out.println("pair= "+pair);
                 }
-
                 if (produs > maxProdus) {
                     maxProdus = produs;
                     System.out.println("maxProdus= "+maxProdus);
                 }
-
             }
-
-
         }
+
+
+//        for (int i = 0; i < count - nrDigitOfPair; i++) {
+//
+//            int init = n;
+//            init=(int) (n / Math.pow(10, i));
+////            System.out.println(init);
+//
+//            while (!(init < digiComparator)) {
+//                pair = (int) (init % Math.pow(10, nrDigitOfPair));
+//                init = (int) (init / Math.pow(10, nrDigitOfPair));
+//                System.out.println(pair);
+//                produs = 1;
+//                while (!(pair ==0)) {
+//                    produs = produs * (pair % 10);
+//                    pair = pair / 10;
+////                  System.out.println("produs= "+ produs);
+////                    System.out.println("pair= "+pair);
+//                }
+//
+//                if (produs > maxProdus) {
+//                    maxProdus = produs;
+//                    System.out.println("maxProdus= "+maxProdus);
+//                }
+//
+//            }
+//
+//
+//        }
     }
 
 
