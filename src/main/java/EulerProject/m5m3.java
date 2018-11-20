@@ -7,7 +7,6 @@ public class m5m3 {
         int b = 5;
         int sum5 = 0;
         int sum3 = 0;
-
         for (int i = 3; i < n; i++) {
 
             if (i % a == 0) {
