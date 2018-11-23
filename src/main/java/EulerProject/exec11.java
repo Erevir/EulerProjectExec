@@ -45,8 +45,8 @@ public class exec11 {
 //        System.out.println(gridIntArray[19][19]);
 
 //**** Max Produs Row*************//
-        for (int i = 0; i < rowLenght; i++) {
-            for (int j = 0; j < colLenght - pairNr; j++) {
+        for (int i = 0; i < rowLenght - 1; i++) {
+            for (int j = 0; j < colLenght - pairNr - 1; j++) {
                 count = 0;
                 produs = 1;
                 while (count < pairNr) {
@@ -67,8 +67,8 @@ public class exec11 {
         System.out.println("maxProdusRow= " + prodMaxRow);
 
 //***** Max Produs Colon*********//
-        for (int j = 0; j < colLenght; j++) {
-            for (int i = 0; i < rowLenght - pairNr; i++) {
+        for (int j = 0; j < colLenght - 1; j++) {
+            for (int i = 0; i < rowLenght - pairNr - 1; i++) {
                 count = 0;
                 produs = 1;
                 while (!(count == pairNr)) {
@@ -89,7 +89,7 @@ public class exec11 {
 
         while (!(countH == rowLenght - pairNr)) {
 //            for (int i = rowLenght - pairNr; i >= 0; i--) {
-                for (int i = rowLenght - countH; i >= 0; i--) {
+            for (int i = rowLenght - countH; i >= 0; i--) {
                 for (int j = 0; j <= colLenght - pairNr; j++) {
                     count = 0;
                     produs = 1;
@@ -112,48 +112,33 @@ public class exec11 {
         System.out.println("prodMaxHorizUp= " + prodMaxHorizUp);
 
         //***** Max Produs Horizontal Low*********//
-        int countL = pairNr;
-        while (!(countL == rowLenght)) {
-//            for (int i = rowLenght - countL; i < 0; i--) {
-            for (int i = countL; i <rowLenght; i++) {
-                for (int j = 0; j < countL; j++) {
+        int countL = 3;
+
+        while (!(countL == rowLenght - 1)) {
+//            for (int i = countL; i > 0; i--) {
+              int i=countL;
+                for (int j = 0; j < colLenght - pairLenght - 1; j++) {
                     produs = 1;
                     count = 0;
+//                    System.out.println("gridIntArray [" + i + "]" + "[" + j + "] =" + gridIntArray[i][j]);
                     while (count < pairNr) {
                         int k = j + count;
-                        int t = i -count;
+                        int t = i - count;
                         int gridResult = gridIntArray[t][k];
                         produs = produs * gridResult;
-
-//                        produs = produs * gridIntArray[i - count][j + count];
+//                        System.out.println("gridIntArray [" + i + "]" + "[" + j + "" + count + "] =" + gridResult + "  produs= " + produs);
                         count++;
-                    }
-                    if (produs > prodMaxHorizLow) {
-                        prodMaxHorizLow = produs;
+
+                        if (produs > prodMaxHorizLow) {
+                            prodMaxHorizLow = produs;
 //                        System.out.println("prodMaxHorizLow= " + prodMaxHorizLow);
+                        }
                     }
                 }
+            countL++;
             }
 
-            countL++;
-        }
         System.out.println("prodMaxHorizLow= " + prodMaxHorizLow);
-
-
-
-//
-//            char[] charArray = matrixArray.toCharArray();
-
-//                for (int i = 0; i < charArray.length; i++) {
-//                    System.out.println("Data at [" + i + "]=" + charArray[i]);
-//
-//                }
-
-//            for (int i = 0; i < charArray.length; i++) {
-//                gridIntArray = new int[charArray.length];
-//                gridIntArray[i] = Character.getNumericValue(charArray[i]);
-//                System.out.println("a["+i+"]= " + gridIntArray[i]);
-//
 
     }
 
